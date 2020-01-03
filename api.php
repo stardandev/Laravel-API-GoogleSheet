@@ -57,13 +57,10 @@ Route::post('/getmessage', function(Request $request) {
    	$window = $request->input('window');
    	$client = new \Google_Client();
 	$client->setApplicationName("aaaa");
-	$client->setDeveloperKey("AIzaSyAbKnpmR9TdMMK62pCDk1odcdWOLqJq5zM");
+	$client->setDeveloperKey("Your api key");
 	$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
 	$client->setAccessType('offline');
-	//$client->setAuthConfig(__DIR__.'/credentials1.json');
-   
-  
- 
+	  
 	//$client->setHttpClient($httpClient);
 	$service = new Google_Service_Sheets($client);
  	 
@@ -159,13 +156,13 @@ Route::post('/getmessage', function(Request $request) {
     $window = $request->input('window');
     $client = new \Google_Client();
 	$client->setApplicationName("aaaa");
-	$client->setDeveloperKey("AIzaSyAbKnpmR9TdMMK62pCDk1odcdWOLqJq5zM");
+	$client->setDeveloperKey("Your api key");
 	$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
 	$client->setAccessType('offline');
 	$client->setAuthConfig(__DIR__.'/credentials.json');
 	$service = new Google_Service_Sheets($client); 
 	$spreadsheetId = $request->input('sheetid');
-	//$spreadsheetId = '1rXv8yThn-mKjhETKbfAmJTyorvwfkzk7hy5ylKZ1KO0';  // TODO: 
+	 
  
     $range='unanswered';
     $un_response = $service->spreadsheets_values->get($spreadsheetId, $range);
@@ -220,7 +217,7 @@ Route::post('/logerrors', function(Request $request) {
 
     $client = new \Google_Client();
 	$client->setApplicationName("aaaa");
-	$client->setDeveloperKey("AIzaSyAbKnpmR9TdMMK62pCDk1odcdWOLqJq5zM");
+	$client->setDeveloperKey("Your api key");
 	$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
 	$client->setAccessType('offline');
 
